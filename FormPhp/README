@@ -1,0 +1,164 @@
+        /**
+
+        - Primeiros códigos em PHP
+
+         * $x = "abc";
+            *$$x = "def";
+            *echo "<br/>Conteúdo da variável x é $x";
+            *echo "<br/>Nova variável criada é $abc";
+
+            *operador unário
+            *$a = 2;
+            *$b = 3;
+            *$maior = $a>$b ? $a : $b;
+            *echo "<br/> Maior número $maior";
+
+            *$preco = $_GET['p'];
+            *echo "O preço do produto é: R$ ".number_format($preco,2);
+
+            *$preco -= $preco*10/100; // calculo do desconto
+            *echo "<br/> O novo preço com 10% de desconto é de: R$ ".number_format($preco,2,",",".");
+
+
+            $nota1 = $_GET['n1'];
+            $nota2 = $_GET['n2'];
+
+            $media = ($nota1 + $nota2)/2;
+
+            echo "A média total das notas foi: ".$media;
+            $sit = ($media <6 )?"Reprovado":"Aprovado";
+            echo "<br/> A situação do aluno é: ".$sit;
+
+
+            $ano = $_GET['ano'];
+            $idade = 2021 - $ano;
+
+            echo "Quem nasceu em $ano tem $idade anos de idade";
+
+            $tipo = ($idade >= 18 && $idade <65)?"Obrigatório":"Não Obrigatório";
+
+            echo "<br/> E dessa maneira seu voto é: ".$tipo;
+
+             <!-- <?php
+        // $nome = isset($_GET["nome"])?$_GET["nome"]:"[Name invalid]";
+        // $ano = isset($_GET["ano"])?$_GET["ano"]:;
+        // $sexo = isset($_GET["sexo"])?$_GET["sexo"]:"[Sexo invalid]";
+
+        // $idade = date("Y") - $ano;
+
+        // echo "$nome é $sexo, e tem $idade anos";
+    ?>
+    <br>
+    <a href="./index.html">Voltar</a> -->
+
+
+     <form method="get" action="idade.php">
+           Nome: <input type="text" name="nome"><br/>
+           Ano de Nascimento: <input type="number" name="ano"><br/>
+
+            <fieldset><legend>Sexo</legend>
+                <input type="radio" value="Homem" name="sexo" id="masc">
+                <label for="masc">Masculino</label><br/>
+                <input type="radio" value="Mulher" name="sexo" id="fem">
+                <label for="fem">Femenino</label>
+            </fieldset><br/>
+            <input type="submit" value="Enviar">
+        </form>
+         */
+            
+
+             <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background: #4d4d4d;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #252525;
+            width: 450px;
+            height: 100vh;
+            margin: 0 auto;
+        }
+        form{
+            background: #fff;
+            padding: 35px 25px;
+            font-size: 16px;
+            color: #4d4d4d;
+
+            border-radius: 5px;
+        }
+        input[type="submit"]{
+            width: 100%;
+            background: #2eac67;
+            color: #fff;
+            border: none;
+            
+            margin-top: 20px;
+            padding: 10px 5px;
+            box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.04);
+        }
+        label{
+            font-size: 16px;
+            color: #262626;
+            font-weight: 500;
+        }
+        input[type="text"]
+        {
+            width: 100%;
+            height: 25px;
+            border: 1px solid #262626;
+            outline: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+
+            font-size: 14px;
+        }
+        input[type="number"]{
+            width: 100%;
+            height: 25px;
+            border: 1px solid #262626;
+            outline: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+
+            font-size: 14px;
+        }
+    </style>
+
+     <h1>Gerador de Cores</h1>
+       <form method="GET" action="cores.php">
+           <label for="itxt">Texto: </label>
+           <input type="text" name="t" id="itxt">
+           <label for="itam">Tamanho</label>
+           <select name="tam" id="itam">
+               <option value="8pt">8</option>
+               <option value="10pt">10</option>
+               <option value="14pt">14</option>
+               <option value="20pt">20</option>
+               <option value="40pt">40</option>
+           </select><br/>
+           <label for="icor">Cor: </label>
+           <input type="color" name="cor" id="icor"><br/>
+           <input type="submit" value="Gerar">
+       </form>
+
+        <form method="GET" action="calc.php">
+           Numero: <input type="number" name="num">
+            <fieldset><legend>Operação</legend>
+                <input type="radio" name="oper" value="1" id="dobro" checked>
+                <label for="dobro">Dobro</label>
+                <input type="radio" name="oper" value="2" id="cubo">
+                <label for="cubo">Cubo</label>
+                <input type="radio" name="oper" value="3" id="raiz">
+                <label for="raiz">Raiz Quadrada</label>
+            </fieldset>
+           <input type="submit" value="Calcular">
+       </form>
